@@ -2,27 +2,35 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
+  // Allow all origins
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   try {
-    const filePath = path.join(process.cwd(), 'api', 'artists-data.json');
+    // Path to JSON file
+    const filePath = path.join(process.cwd(), 'data', 'artists-data.json');
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(jsonData);
 
-    // Get 'language' from query params, e.g., /api/languages?language=Tamil
+    // Optional filter by query parameter: language
     const { language } = req.query;
+    let result = data;
 
     if (language) {
-      // Filter the languages array
-      const filtered = data.languages.filter(
-        (item) => item.language.toLowerCase() === language.toLowerCase()
+      result = data.filter(item =>
+        item.language.toLowerCase() === language.toLowerCase()
       );
-
-      // If nothing found, return empty array
-      return res.status(200).json({ languages: filtered });
     }
 
-    // If no filter, return all
-    res.status(200).json(data);
+    res.status(200).json(result);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: 'Unable to read JSON file' });
   }
 }
