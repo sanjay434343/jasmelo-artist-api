@@ -2,25 +2,27 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-  // Enable CORS for all origins
+  // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
-    return res.status(200).end(); // handle preflight request
+    return res.status(200).end(); // handle preflight
   }
 
   try {
-    // JSON file is in the same folder as this API file
+    // JSON file directly under api folder
     const filePath = path.join(process.cwd(), 'api', 'artists-data.json');
     const jsonData = fs.readFileSync(filePath, 'utf8');
     let data = JSON.parse(jsonData);
 
-    // Optional language filter: /api/artists?lang=English
-    const { lang } = req.query;
-    if (lang) {
-      data = data.filter(item => item.language.toLowerCase() === lang.toLowerCase());
+    // Use 'language' query parameter
+    const { language } = req.query;
+    if (language) {
+      data = data.filter(
+        item => item.language && item.language.toLowerCase() === language.toLowerCase()
+      );
     }
 
     res.status(200).json(data);
@@ -29,3 +31,4 @@ export default function handler(req, res) {
     res.status(500).json({ error: 'Unable to read JSON file' });
   }
 }
+
