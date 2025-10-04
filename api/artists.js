@@ -7,17 +7,21 @@ export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end(); // handle preflight
-  }
+  if (req.method === 'OPTIONS') return res.status(200).end();
 
   try {
-    // JSON file directly under api folder
+    // Use __dirname to get the same folder as this file
     const filePath = path.join(process.cwd(), 'api', 'artists-data.json');
+
+    // Check if file exists
+    if (!fs.existsSync(filePath)) {
+      return res.status(500).json({ error: 'JSON file not found at path: ' + filePath });
+    }
+
     const jsonData = fs.readFileSync(filePath, 'utf8');
     let data = JSON.parse(jsonData);
 
-    // Use 'language' query parameter
+    // Filter by language if query exists
     const { language } = req.query;
     if (language) {
       data = data.filter(
@@ -28,7 +32,6 @@ export default function handler(req, res) {
     res.status(200).json(data);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Unable to read JSON file' });
+    res.status(500).json({ error: 'Unable to read JSON file', details: error.message });
   }
 }
-
