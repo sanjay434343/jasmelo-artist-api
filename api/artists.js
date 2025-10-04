@@ -14,7 +14,7 @@ export default function handler(req, res) {
 
   try {
     // Path to JSON file
-    const filePath = path.join(process.cwd(), 'data', 'artists-data.json');
+    const filePath = path.join(process.cwd(), 'api', 'artists-data.json');
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(jsonData);
 
