@@ -1,0 +1,729 @@
+const express = require('express');
+const app = express();
+
+// JSON data
+const data = {
+{
+  "languages": [
+    {
+      "language": "Tamil",
+      "artists": [
+        {
+          "name": "A. R. Rahman",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/AR_Rahman_At_The_%E2%80%98Marvel_Anthem%E2%80%99_Launch_%283x4_cropped%29.jpg/330px-AR_Rahman_At_The_%E2%80%98Marvel_Anthem%E2%80%99_Launch_%283x4_cropped%29.jpg"
+        },
+        {
+          "name": "Ilaiyaraaja",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Ilaiyaraaja_at_Merku_Thodarchi_Malai_Press_Meet_%28cropped%29.jpg/330px-Ilaiyaraaja_at_Merku_Thodarchi_Malai_Press_Meet_%28cropped%29.jpg"
+        },
+        {
+          "name": "Yuvan Shankar Raja",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Yuvan_Shankar_Raja_at_Concert_%28cropped%29.jpg/330px-Yuvan_Shankar_Raja_at_Concert_%28cropped%29.jpg"
+        },
+        {
+          "name": "Anirudh Ravichander",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Anirudh_Ravichander_at_the_Velaikkaran_Audio_Launch.jpg/330px-Anirudh_Ravichander_at_the_Velaikkaran_Audio_Launch.jpg"
+        },
+        {
+          "name": "Sid Sriram",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Sid_Sriram.jpg/330px-Sid_Sriram.jpg"
+        },
+        {
+          "name": "Hariharan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hariharan_2007_-_still_27184.jpg/500px-Hariharan_2007_-_still_27184.jpg"
+        },
+        {
+          "name": "S. P. Balasubrahmanyam",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/S._P._Balasubrahmanyam_at_the_%27Gurkha%27_Audio_Launch.jpg/330px-S._P._Balasubrahmanyam_at_the_%27Gurkha%27_Audio_Launch.jpg"
+        },
+        {
+          "name": "Chinmayi",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Chinmayi_Sripada_at_film_fare_festival_for_winning_96s_best_singer_of_the_year_2018_%28cropped%29.jpg/500px-Chinmayi_Sripada_at_film_fare_festival_for_winning_96s_best_singer_of_the_year_2018_%28cropped%29.jpg"
+        },
+        {
+          "name": "Shreya Ghoshal",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28Cropped%29.jpg/330px-Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28Cropped%29.jpg"
+        },
+        {
+          "name": "Pradeep Kumar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Pradeep_Rangaswamy_Kumar.png/375px-Pradeep_Rangaswamy_Kumar.png"
+        }
+      ]
+    },
+    {
+      "language": "Hindi",
+      "artists": [
+        {
+          "name": "Arijit Singh",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Arijit_5th_GiMA_Awards.jpg/330px-Arijit_5th_GiMA_Awards.jpg"
+        },
+        {
+          "name": "Sonu Nigam",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Sonu_Nigam121.jpg/330px-Sonu_Nigam121.jpg"
+        },
+        {
+          "name": "Shreya Ghoshal",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28Cropped%29.jpg/330px-Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28Cropped%29.jpg"
+        },
+        {
+          "name": "Neha Kakkar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Neha_Kakkar_in_January_2020.jpg"
+        },
+        {
+          "name": "Kumar Sanu",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Kumar_Sanu_at_colors_indian_telly_awards.jpg/330px-Kumar_Sanu_at_colors_indian_telly_awards.jpg"
+        },
+        {
+          "name": "Alka Yagnik",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Alka_Yagnik_in_2023_%28cropped%29.jpg"
+        },
+        {
+          "name": "Lata Mangeshkar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lata_Mangeshkar_%281950s%29.jpg/330px-Lata_Mangeshkar_%281950s%29.jpg"
+        },
+        {
+          "name": "Kishore Kumar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Kishore_Kumar_2016_postcard_of_India_%28cropped%29.jpg/330px-Kishore_Kumar_2016_postcard_of_India_%28cropped%29.jpg"
+        },
+        {
+          "name": "Mohammed Rafi",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Mohd_Rafi_2003_stamp_of_India_%28cropped%29.jpg/330px-Mohd_Rafi_2003_stamp_of_India_%28cropped%29.jpg"
+        },
+        {
+          "name": "Armaan Malik",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Armaan_Malik_2016.jpg/330px-Armaan_Malik_2016.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Telugu",
+      "artists": [
+        {
+          "name": "Devi Sri Prasad",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Devi_sri_prasad.jpg/330px-Devi_sri_prasad.jpg"
+        },
+        {
+          "name": "Pawan Kalyan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/The_portrait_of_Pawan_Kalyan_%282024%29.jpg/500px-The_portrait_of_Pawan_Kalyan_%282024%29.jpg"
+        },
+        {
+          "name": "S. Thaman",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/S._Thaman_at_Damaal_Dumeel_Audio_Launch.jpg/330px-S._Thaman_at_Damaal_Dumeel_Audio_Launch.jpg"
+        },
+        {
+          "name": "Ghantasala",
+          "image": "https://imgs.search.brave.com/9g87A0g47NksLUIjv4BL4xKLqVnzuRbmckBB5G6UKrM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vq/Z1F6YlpkdGFPYWRN/alFMTGJwbEhDMUNw/M29BQTVrbzR3S2Vs/b295RFJqUWhTLTZp/YU81U0RYaS1iVGto/S19fWkV3UnJqUXV2/a2dvZ3FLZFNpZUVV/NWFvQkJObVFyUHNT/eFpfd2VJX3VhNGFJ/MUs1UG9tdU1qR0F2/S1RpNjZnSDBmaWZJ/TkRHdDRoYmsvczE2/MDAvcmFqLXNpbmdl/ci5qcGc"
+        },
+        {
+          "name": "K. S. Chithra",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Melody_Queen_of_Indian_Cinema_Dr._K_S_Chithra_%28cropped%29.jpg/330px-Melody_Queen_of_Indian_Cinema_Dr._K_S_Chithra_%28cropped%29.jpg"
+        },
+        {
+          "name": "S. P. Balasubrahmanyam",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/S._P._Balasubrahmanyam_at_the_%27Gurkha%27_Audio_Launch.jpg/330px-S._P._Balasubrahmanyam_at_the_%27Gurkha%27_Audio_Launch.jpg"
+        },
+        {
+          "name": "Sunitha Upadrashta",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Sunitha.jpg/330px-Sunitha.jpg"
+        },
+        {
+          "name": "Geetha Madhuri",
+          "image": "https://imgs.search.brave.com/BQqeI8s6FuSNb6xstMIwPM_8rbs54dDnYXLaaFijaC0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QllUVTBOelV4/WVdJdE5XSXpNaTAw/WWpZNExUZzNOekF0/WVRBMU1ETTNPR000/TWpNNFhrRXlYa0Zx/Y0djQC5qcGc"
+        },
+        {
+          "name": "Mano",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Playback_singer_Mano.JPG/330px-Playback_singer_Mano.JPG"
+        },
+        {
+          "name": "Sid Sriram",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Sid_Sriram.jpg/330px-Sid_Sriram.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Malayalam",
+      "artists": [
+        {
+          "name": "K. J. Yesudas",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/K.J_Yesudas.JPG/330px-K.J_Yesudas.JPG"
+        },
+        {
+          "name": "Vidyasagar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Vidyasagar_at_the_Audio_Launch_of_%27Mozhi%27.jpg"
+        },
+        {
+          "name": "M. G. Sreekumar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/MG_Sreekumar_%28Cropped%29.jpg/330px-MG_Sreekumar_%28Cropped%29.jpg"
+        },
+        {
+          "name": "K. S. Chithra",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Melody_Queen_of_Indian_Cinema_Dr._K_S_Chithra_%28cropped%29.jpg/330px-Melody_Queen_of_Indian_Cinema_Dr._K_S_Chithra_%28cropped%29.jpg"
+        },
+        {
+          "name": "Unni Menon",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Unni_Menon.jpg/330px-Unni_Menon.jpg"
+        },
+        {
+          "name": "Sujatha Mohan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sujatha_mohan_on_stage_%28cropped%29.jpg/330px-Sujatha_mohan_on_stage_%28cropped%29.jpg"
+        },
+        {
+          "name": "Rimi Tomy",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Rimi_Tomy_cropped.jpg/330px-Rimi_Tomy_cropped.jpg"
+        },
+        {
+          "name": "Bijibal",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Bijibal.jpg/330px-Bijibal.jpg"
+        },
+        {
+          "name": "Rex Vijayan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Rex_Vijayan.jpg/330px-Rex_Vijayan.jpg"
+        },
+        {
+          "name": "Gopi Sundar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gopi-sundar.jpg/330px-Gopi-sundar.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Bengali",
+      "artists": [
+        {
+          "name": "R. D. Burman",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Rahul_Dev_Burman.jpg/320px-Rahul_Dev_Burman.jpg"
+        },
+        {
+          "name": "Kishore Kumar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Kishore_Kumar_2016_postcard_of_India_%28cropped%29.jpg/330px-Kishore_Kumar_2016_postcard_of_India_%28cropped%29.jpg"
+        },
+        {
+          "name": "Hemanta Mukhopadhyay",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Hemant_Kumar_2016_stamp_of_India_%28cropped%29.jpg"
+        },
+        {
+          "name": "Manna Dey",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Manna_Dey.jpg/330px-Manna_Dey.jpg"
+        },
+        {
+          "name": "Nachiketa Chakraborty",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Nachiketa_Chakraborty.jpg/330px-Nachiketa_Chakraborty.jpg"
+        },
+        {
+          "name": "Arijit Singh",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Arijit_5th_GiMA_Awards.jpg/330px-Arijit_5th_GiMA_Awards.jpg"
+        },
+        {
+          "name": "Shreya Ghoshal",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28Cropped%29.jpg/330px-Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28Cropped%29.jpg"
+        },
+        {
+          "name": "Anupam Roy",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Anupam_Roy_at_home.jpg/330px-Anupam_Roy_at_home.jpg"
+        },
+        {
+          "name": "Indranil Sen",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Indranil_Sen_at_the_Audio_Launch_of_%27Bhalobashar_Bari%27.jpg"
+        },
+        {
+          "name": "Monali Thakur",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Monali_Thakur_at_the_Kelvinator_Stree_Shakti_Women_Awards_2014.jpg/330px-Monali_Thakur_at_the_Kelvinator_Stree_Shakti_Women_Awards_2014.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Kannada",
+      "artists": [
+        {
+          "name": "Rajkumar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Dr._Rajkumar_in_2004.jpg"
+        },
+        {
+          "name": "V. Harikrishna",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/V._Harikrishna_at_the_Audio_Launch_of_%27Raajakumara%27.jpg"
+        },
+        {
+          "name": "Arjun Janya",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Arjun_Janya_at_the_Audio_Launch_of_%27Bhajarangi%27.jpg"
+        },
+        {
+          "name": "Hamsalekha",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hamsalekha.jpg/330px-Hamsalekha.jpg"
+        },
+        {
+          "name": "S. P. Balasubrahmanyam",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/S._P._Balasubrahmanyam_at_the_%27Gurkha%27_Audio_Launch.jpg/330px-S._P._Balasubrahmanyam_at_the_%27Gurkha%27_Audio_Launch.jpg"
+        },
+        {
+          "name": "Anuradha Bhat",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Anuradha_Bhat_at_the_Audio_Launch_of_%27RangiTaranga%27.jpg"
+        },
+        {
+          "name": "Shreya Ghoshal",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28Cropped%29.jpg/330px-Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28Cropped%29.jpg"
+        },
+        {
+          "name": "Vijay Prakash",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Vijay_Prakash_at_the_Audio_Launch_of_%27Raajakumara%27.jpg"
+        },
+        {
+          "name": "Rajesh Krishnan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Rajesh_Krishnan_%28cropped%29.jpg/330px-Rajesh_Krishnan_%28cropped%29.jpg"
+        },
+        {
+          "name": "C. Ashwath",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/C_Ashwath.jpg/330px-C_Ashwath.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Gujarati",
+      "artists": [
+        {
+          "name": "Kinjal Dave",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Kinjal_Dave_at_the_Audio_Launch_of_%27Kinjal_Dave_No_Dhol%27.jpg"
+        },
+        {
+          "name": "Geeta Rabari",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Geeta_Rabari_at_the_Audio_Launch_of_%27Eklo_Rabari%27.jpg"
+        },
+        {
+          "name": "Praful Dave",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Praful_Dave_at_the_Audio_Launch_of_%27Gujarati_Garba%27.jpg"
+        },
+        {
+          "name": "Kirtidan Gadhvi",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Kirtidan_Gadhavi.jpg/330px-Kirtidan_Gadhavi.jpg"
+        },
+        {
+          "name": "Aishwarya Majmudar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Aishwarya_Majmudar_at_the_Audio_Launch_of_%27Aishwarya_Majmudar_No_Dhol%27.jpg"
+        },
+        {
+          "name": "Jignesh Kaviraj",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Jignesh_Kaviraj_at_the_Audio_Launch_of_%27Gujarati_Garba%27.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Punjabi",
+      "artists": [
+        {
+          "name": "Gurdas Maan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Gurdas_Maan1.jpg/330px-Gurdas_Maan1.jpg"
+        },
+        {
+          "name": "Diljit Dosanjh",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Diljit_Dosanjh.jpg/330px-Diljit_Dosanjh.jpg"
+        },
+        {
+          "name": "Sidhu Moose Wala",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Sidhu_Moose_Wala_during_the_shooting_of_his_film_Moosa_Jatt_%28cropped%29.jpg/330px-Sidhu_Moose_Wala_during_the_shooting_of_his_film_Moosa_Jatt_%28cropped%29.jpg"
+        },
+        {
+          "name": "Amrinder Gill",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Director_Simerjit_Singh_%28cropped%29.jpg/330px-Director_Simerjit_Singh_%28cropped%29.jpg"
+        },
+        {
+          "name": "Jassie Gill",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Jassie_Gill.jpg/330px-Jassie_Gill.jpg"
+        },
+        {
+          "name": "Sharry Mann",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Sharry_Maan.jpg/330px-Sharry_Maan.jpg"
+        },
+        {
+          "name": "Gippy Grewal",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Gippy_Grewal_grace_the_premiere_of_Jatt_Nuu_Chudail_Takri_%28Cropped%29.jpg/330px-Gippy_Grewal_grace_the_premiere_of_Jatt_Nuu_Chudail_Takri_%28Cropped%29.jpg"
+        },
+        {
+          "name": "Jazzy B",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Bhangra_Night_Jazzy_B%21%21%21%21%21%21.jpg/330px-Bhangra_Night_Jazzy_B%21%21%21%21%21%21.jpg"
+        },
+        {
+          "name": "Hardy Sandhu",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Harrdy_Sandhu_snapped_promoting_his_film_on_Jhalak_Dikhhla_Jaa_10.jpg/330px-Harrdy_Sandhu_snapped_promoting_his_film_on_Jhalak_Dikhhla_Jaa_10.jpg"
+        },
+        {
+          "name": "Babbu Maan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Babbu_Maan_Baarish_Ke_Bahaane_%28cropped%29.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Marathi",
+      "artists": [
+        {
+          "name": "Ajay-Atul",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AjayAtul_Pune_2017.jpg/330px-AjayAtul_Pune_2017.jpg"
+        },
+        {
+          "name": "Avadhoot Gupte",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Avadhoot_Gupte.JPG/330px-Avadhoot_Gupte.JPG"
+        },
+        {
+          "name": "Sudhir Phadke",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Sudhir_Phadke_at_the_Audio_Launch_of_%27Geet_Ramayan%27.jpg"
+        },
+        {
+          "name": "Anand Shinde",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Anand_Shinde_at_the_Audio_Launch_of_%27Marathi_Bhakti_Geet%27.jpg"
+        },
+        {
+          "name": "Shankar Mahadevan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Shankar_Mahadevan_01_%28cropped%29.jpg"
+        },
+        {
+          "name": "Hridaynath Mangeshkar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Hridaynath-Mangeshkar-2008.JPG/330px-Hridaynath-Mangeshkar-2008.JPG"
+        },
+        {
+          "name": "Usha Mangeshkar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Usha_Mangeshkar_2007_-_still_19426_crop.jpg/330px-Usha_Mangeshkar_2007_-_still_19426_crop.jpg"
+        },
+        {
+          "name": "Lata Mangeshkar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lata_Mangeshkar_%281950s%29.jpg/330px-Lata_Mangeshkar_%281950s%29.jpg"
+        },
+        {
+          "name": "Asha Bhosle",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ashaji.jpg/330px-Ashaji.jpg"
+        },
+        {
+          "name": "Suresh Wadkar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Suresh_Wadkar_2008_-_still_29248_crop.jpg/330px-Suresh_Wadkar_2008_-_still_29248_crop.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Urdu",
+      "artists": [
+        {
+          "name": "Nusrat Fateh Ali Khan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Nusrat_Fateh_Ali_Khan_%281948-1997%29.jpg/330px-Nusrat_Fateh_Ali_Khan_%281948-1997%29.jpg"
+        },
+        {
+          "name": "Atif Aslam",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Atif_Aslam_at_Badlapur_%28cropped%29.jpg/330px-Atif_Aslam_at_Badlapur_%28cropped%29.jpg"
+        },
+        {
+          "name": "Abida Parveen",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Abida_Parveen.jpg/330px-Abida_Parveen.jpg"
+        },
+        {
+          "name": "Ali Zafar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Ali_Zafar_at_%27Sa_Re_Ga_Ma_Pa%27_North_America%27_event_%28cropped%29.jpg"
+        },
+        {
+          "name": "Rahat Fateh Ali Khan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/IIFA-2014-GreenCarpet2_%28158%29_%28cropped%29.jpg/330px-IIFA-2014-GreenCarpet2_%28158%29_%28cropped%29.jpg"
+        },
+        {
+          "name": "Farhan Saeed",
+          "image": "https://upload.wikimedia.org/wikipedia/en/a/ab/Farhan_Saeed.jpeg"
+        },
+        {
+          "name": "Ali Sethi",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Ali_Sethi.jpg/330px-Ali_Sethi.jpg"
+        },
+        {
+          "name": "Mehdi Hassan",
+          "image": "https://upload.wikimedia.org/wikipedia/en/c/cb/Mehdi_Hassan.jpg"
+        },
+        {
+          "name": "Bilal Saeed",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Bilal_Saeed.jpg/330px-Bilal_Saeed.jpg"
+        },
+        {
+          "name": "Abrar-ul-Haq",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Abrar-ul-Haq.png"
+        }
+      ]
+    },
+    {
+      "language": "French",
+      "artists": [
+        {
+          "name": "Édith Piaf",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Piaf_Harcourt_1946_2.jpg/330px-Piaf_Harcourt_1946_2.jpg"
+        },
+        {
+          "name": "Stromae",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Stromae_2011_cropped.jpg/330px-Stromae_2011_cropped.jpg"
+        },
+        {
+          "name": "Christine and the Queens",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/TorinoChristine_1.jpg/330px-TorinoChristine_1.jpg"
+        },
+        {
+          "name": "Indila",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Indila_-_EBBA_2015.jpg/330px-Indila_-_EBBA_2015.jpg"
+        },
+        {
+          "name": "Mylène Farmer",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Myl%C3%A8ne_farmer_Live_2019_%28cropped%29.jpg/330px-Myl%C3%A8ne_farmer_Live_2019_%28cropped%29.jpg"
+        },
+        {
+          "name": "Francis Cabrel",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Francis_Cabrel%2C_2009_%28cropped%29.jpg"
+        },
+        {
+          "name": "MC Solaar",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/MC_Solaar_Invit%C3%A9_du_RH_Factor.jpg/330px-MC_Solaar_Invit%C3%A9_du_RH_Factor.jpg"
+        },
+        {
+          "name": "Zaz",
+          "image": null
+        },
+        {
+          "name": "Johnny Hallyday",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Johnny_Hallyday_en_2009_%C3%A0_Bruxelles.jpg/330px-Johnny_Hallyday_en_2009_%C3%A0_Bruxelles.jpg"
+        },
+        {
+          "name": "Charles Aznavour",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Charles_Aznavour_1961.jpg/330px-Charles_Aznavour_1961.jpg"
+        }
+      ]
+    },
+    {
+      "language": "English",
+      "artists": [
+        {
+          "name": "Elvis Presley",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elvis_Presley_promoting_Jailhouse_Rock.jpg/330px-Elvis_Presley_promoting_Jailhouse_Rock.jpg"
+        },
+        {
+          "name": "Michael Jackson",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Michael_Jackson_1983_%283x4_cropped%29_%28contrast%29.jpg/330px-Michael_Jackson_1983_%283x4_cropped%29_%28contrast%29.jpg"
+        },
+        {
+          "name": "The Beatles",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/The_Beatles_members_at_New_York_City_in_1964.jpg/330px-The_Beatles_members_at_New_York_City_in_1964.jpg"
+        },
+        {
+          "name": "Adele",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Adele_2016.jpg/330px-Adele_2016.jpg"
+        },
+        {
+          "name": "Taylor Swift",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%283%29.png/330px-Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%283%29.png"
+        },
+        {
+          "name": "Ed Sheeran",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/330px-Ed_Sheeran-6886_%28cropped%29.jpg"
+        },
+        {
+          "name": "Beyoncé",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_%2810_of_118%29_%2852946364598%29_%28best_crop%29.jpg/330px-Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_%2810_of_118%29_%2852946364598%29_%28best_crop%29.jpg"
+        },
+        {
+          "name": "Rihanna",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Rihanna_visits_U.S._Embassy_in_Barbados_2024_%28cropped%29.jpg"
+        },
+        {
+          "name": "Bruno Mars",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/BrunoMars24KMagicWorldTourLive_%28cropped%29.jpg/330px-BrunoMars24KMagicWorldTourLive_%28cropped%29.jpg"
+        },
+        {
+          "name": "Lady Gaga",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Lady_Gaga_at_Joe_Biden%27s_inauguration_%28cropped_5%29.jpg/330px-Lady_Gaga_at_Joe_Biden%27s_inauguration_%28cropped_5%29.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Spanish",
+      "artists": [
+        {
+          "name": "Shakira",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2023-11-16_Gala_de_los_Latin_Grammy%2C_03_%28cropped%2902.jpg/330px-2023-11-16_Gala_de_los_Latin_Grammy%2C_03_%28cropped%2902.jpg"
+        },
+        {
+          "name": "Enrique Iglesias",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Enrique_Iglesias_2011%2C_2.jpg/330px-Enrique_Iglesias_2011%2C_2.jpg"
+        },
+        {
+          "name": "Rosalía",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/2023-11-16_Gala_de_los_Latin_Grammy%2C_27_%28cropped%29.jpg/330px-2023-11-16_Gala_de_los_Latin_Grammy%2C_27_%28cropped%29.jpg"
+        },
+        {
+          "name": "Luis Fonsi",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Luis_Fonsi_2015_%28cropped%29.JPG/330px-Luis_Fonsi_2015_%28cropped%29.JPG"
+        },
+        {
+          "name": "Ricky Martin",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Ricky_Martin_Golden_Globe_Awards_2018.jpg/330px-Ricky_Martin_Golden_Globe_Awards_2018.jpg"
+        },
+        {
+          "name": "Alejandro Sanz",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Goyas_2025_-_Alejandro_Sanz_%28cropped%29.jpg/330px-Goyas_2025_-_Alejandro_Sanz_%28cropped%29.jpg"
+        },
+        {
+          "name": "Pablo Alborán",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/2023-11-16_Gala_de_los_Latin_Grammy%2C_23_%28cropped%29.jpg/330px-2023-11-16_Gala_de_los_Latin_Grammy%2C_23_%28cropped%29.jpg"
+        },
+        {
+          "name": "David Bisbal",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/2023-11-16_Gala_de_los_Latin_Grammy%2C_12_%28cropped%29.jpg/330px-2023-11-16_Gala_de_los_Latin_Grammy%2C_12_%28cropped%29.jpg"
+        },
+        {
+          "name": "Juanes",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/2023-11-16_Gala_de_los_Latin_Grammy%2C_14_%28cropped%29.jpg/330px-2023-11-16_Gala_de_los_Latin_Grammy%2C_14_%28cropped%29.jpg"
+        },
+        {
+          "name": "Maluma",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/2023-11-16_Gala_de_los_Latin_Grammy%2C_20_%28Maluma%29.jpg/330px-2023-11-16_Gala_de_los_Latin_Grammy%2C_20_%28Maluma%29.jpg"
+        },
+        {
+          "name": "Daddy Yankee",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Daddy_Yankee_entrevista.png/330px-Daddy_Yankee_entrevista.png"
+        },
+        {
+          "name": "Bad Bunny",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Bad_Bunny_2019_by_Glenn_Francis_%28cropped%29.jpg/330px-Bad_Bunny_2019_by_Glenn_Francis_%28cropped%29.jpg"
+        },
+        {
+          "name": "Celia Cruz",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Celia_Cruz%2C_1957.jpg/330px-Celia_Cruz%2C_1957.jpg"
+        },
+        {
+          "name": "Marc Anthony",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Interview_with_Marc_Anthony_%28cropped%29.png/330px-Interview_with_Marc_Anthony_%28cropped%29.png"
+        },
+        {
+          "name": "Joan Manuel Serrat",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Joan_Manuel_Serrat_-_Gira_100x100_Serrat.jpg/330px-Joan_Manuel_Serrat_-_Gira_100x100_Serrat.jpg"
+        },
+        {
+          "name": "Julio Iglesias",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Julio_Iglesias09.jpg/330px-Julio_Iglesias09.jpg"
+        },
+        {
+          "name": "Raphael",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Raffaello_Sanzio.jpg/330px-Raffaello_Sanzio.jpg"
+        },
+        {
+          "name": "Lola Flores",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/1lolaflores1941_aprox.jpg/330px-1lolaflores1941_aprox.jpg"
+        },
+        {
+          "name": "Vicente Fernández",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Vicente_Fern%C3%A1ndez_-_Pepsi_Center_-_06.11.11.jpg/330px-Vicente_Fern%C3%A1ndez_-_Pepsi_Center_-_06.11.11.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Russian",
+      "artists": [
+        {
+          "name": "Alla Pugacheva",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/%D0%90%D0%BB%D0%BB%D0%B0_%D0%9F%D1%83%D0%B3%D0%B0%D1%87%D0%B5%D0%B2%D0%B0_%D0%BD%D0%B0_%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D0%B5_%D0%A1%D0%BB%D0%BE%D0%B2%D0%BE_%D0%9D%D0%BE%D0%B2%D0%BE_%28cropped%29.jpg/330px-%D0%90%D0%BB%D0%BB%D0%B0_%D0%9F%D1%83%D0%B3%D0%B0%D1%87%D0%B5%D0%B2%D0%B0_%D0%BD%D0%B0_%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D0%B5_%D0%A1%D0%BB%D0%BE%D0%B2%D0%BE_%D0%9D%D0%BE%D0%B2%D0%BE_%28cropped%29.jpg"
+        },
+        {
+          "name": "Dima Bilan",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/%D0%9A%D0%BE%D0%BD%D1%86%D0%B5%D1%82_40._%D0%94%D0%B8%D0%BC%D0%B0_%D0%91%D0%B8%D0%BB%D0%B0%D0%BD._%D0%B2_%D0.A1%D0%9F%D0%B1_%2815%29.jpg/330px-%D0%9A%D0%BE%D0%BD%D1%86%D0%B5%D1%82_40._%D0%94%D0%B8%D0%BC%D0%B0_%D0%91%D0%B8%D0%BB%D0%B0%D0%BD._%D0%B2_%D0.A1%D0%9F%D0%B1_%2815%29.jpg"
+        },
+        {
+          "name": "Vitas",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/VVitas.jpg/330px-VVitas.jpg"
+        },
+        {
+          "name": "Polina Gagarina",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/20150512_ESC_2015_Polina_Gagarina_4749.jpg/330px-20150512_ESC_2015_Polina_Gagarina_4749.jpg"
+        },
+        {
+          "name": "Sergey Lazarev",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/ESC2016_-_Russia_Meet_%26_Greet_08_%28crop%29.jpg/330px-ESC2016_-_Russia_Meet_%26_Greet_08_%28crop%29.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Chinese",
+      "artists": [
+        {
+          "name": "Jay Chou",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Jay_Chou_in_Shanghai_2023_%284%29.jpg/330px-Jay_Chou_in_Shanghai_2023_%284%29.jpg"
+        },
+        {
+          "name": "Teresa Teng",
+          "image": "https://upload.wikimedia.org/wikipedia/en/1/10/Teresa_Teng.gif"
+        },
+        {
+          "name": "Faye Wong",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Faye_Wong_%28cropped%29.jpg/330px-Faye_Wong_%28cropped%29.jpg"
+        },
+        {
+          "name": "Jacky Cheung",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/JackyCheung2012.jpg/330px-JackyCheung2012.jpg"
+        },
+        {
+          "name": "G.E.M.",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/G.E.M._%282021-04-16%29.jpg/330px-G.E.M._%282021-04-16%29.jpg"
+        }
+      ]
+    },
+    {
+      "language": "German",
+      "artists": [
+        {
+          "name": "Nena",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/2018_Sternstunden-Gala_-_Nena_-_by_2eight_-_DSC5745.jpg/330px-2018_Sternstunden-Gala_-_Nena_-_by_2eight_-_DSC5745.jpg"
+        },
+        {
+          "name": "Herbert Grönemeyer",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/1LIVE_Krone_2014_Herbert_Gr%C3%B6nemeyer_1.jpg/330px-1LIVE_Krone_2014_Herbert_Gr%C3%B6nemeyer_1.jpg"
+        },
+        {
+          "name": "Helene Fischer",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Helene-Fischer-Schleyerhalle.jpg/330px-Helene-Fischer-Schleyerhalle.jpg"
+        },
+        {
+          "name": "Peter Maffay",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/2019_Sternstunden-Gala_-_Peter_Maffay_-_by_2eight_-_ZSC6471_%28cropped%29.jpg/330px-2019_Sternstunden-Gala_-_Peter_Maffay_-_by_2eight_-_ZSC6471_%28cropped%29.jpg"
+        },
+        {
+          "name": "Sarah Connor",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Sarah_Connor_at_the_Audio_Launch_of_%27From_Sarah_With_Love%27.jpg"
+        }
+      ]
+    },
+    {
+      "language": "Italian",
+      "artists": [
+        {
+          "name": "Andrea Bocelli",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Andrea_Bocelli_2023-11-16_Gala_de_los_Latin_Grammy%2C_21_%28cropped%29.jpg/330px-Andrea_Bocelli_2023-11-16_Gala_de_los_Latin_Grammy%2C_21_%28cropped%29.jpg"
+        },
+        {
+          "name": "Laura Pausini",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laura_Pausini_2009.04.30_018.jpg/330px-Laura_Pausini_2009.04.30_018.jpg"
+        },
+        {
+          "name": "Eros Ramazzotti",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Eros_Ramazzotti.JPG/330px-Eros_Ramazzotti.JPG"
+        },
+        {
+          "name": "Luciano Pavarotti",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Luciano_Pavarotti_2004.jpg/330px-Luciano_Pavarotti_2004.jpg"
+        },
+        {
+          "name": "Tiziano Ferro",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Tiziano_Ferro_in_Schwyz_%28cropped%29.jpg/330px-Tiziano_Ferro_in_Schwyz_%28cropped%29.jpg"
+        }
+      ]
+    }
+  ]
+} 
+  ]
+};
+
+// API endpoint
+app.get('/api/artists', (req, res) => {
+  res.json(data);
+});
+
+// Start server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`API running on port ${port}`);
+});
+
+module.exports = app;
