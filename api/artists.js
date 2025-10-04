@@ -2,33 +2,28 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-  // Allow all origins
+  // Enable CORS for all origins
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Handle preflight request
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    return res.status(200).end(); // handle preflight request
   }
 
   try {
-    // Path to JSON file
+    // JSON file is in the same folder as this API file
     const filePath = path.join(process.cwd(), 'api', 'artists-data.json');
     const jsonData = fs.readFileSync(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
+    let data = JSON.parse(jsonData);
 
-    // Optional filter by query parameter: language
-    const { language } = req.query;
-    let result = data;
-
-    if (language) {
-      result = data.filter(item =>
-        item.language.toLowerCase() === language.toLowerCase()
-      );
+    // Optional language filter: /api/artists?lang=English
+    const { lang } = req.query;
+    if (lang) {
+      data = data.filter(item => item.language.toLowerCase() === lang.toLowerCase());
     }
 
-    res.status(200).json(result);
+    res.status(200).json(data);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Unable to read JSON file' });
