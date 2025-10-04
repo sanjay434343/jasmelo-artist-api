@@ -3,7 +3,7 @@ import path from 'path';
 
 export default function handler(req, res) {
   try {
-    const filePath = path.join(process.cwd(), 'api', 'artist-data.json');
+    const filePath = path.join(process.cwd(), 'api', 'artists-data.json');
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(jsonData);
 
