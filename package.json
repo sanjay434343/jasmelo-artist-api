@@ -1,0 +1,15 @@
+{
+  "name": "languages-artists-api",
+  "version": "1.0.0",
+  "description": "A simple Node.js API to serve languages and artists JSON",
+  "main": "index.js",
+  "scripts": {
+    "start": "node api/artists.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
